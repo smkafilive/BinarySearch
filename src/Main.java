@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static int binary(int[] arr, int key) {
@@ -11,10 +13,10 @@ public class Main {
 
             if (arr[mid] == key) {
                 return mid;
-            }
+            } 
             else if (arr[mid] < key) {
                 low = mid + 1;
-            }
+            } 
             else {
                 high = mid - 1;
             }
@@ -25,8 +27,20 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int[] arr = {10, 20, 30, 40, 50};
-        int key = 30;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        System.out.println("Enter elements (sorted order):");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        System.out.print("Enter element to search: ");
+        int key = sc.nextInt();
 
         int result = binary(arr, key);
 
@@ -35,5 +49,7 @@ public class Main {
         } else {
             System.out.println("Element not found");
         }
+
+        sc.close();
     }
 }
