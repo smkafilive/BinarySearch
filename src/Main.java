@@ -20,7 +20,7 @@ public class Main {
             }
         }
 
-        return -1; // not found
+        return -1;
     }
 
     public static void main(String[] args) {
